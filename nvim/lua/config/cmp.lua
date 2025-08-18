@@ -79,6 +79,9 @@ cmp.setup {
             return kind
         end,
     },
+    experimental = {
+      ghost_text = true,
+    },
 }
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

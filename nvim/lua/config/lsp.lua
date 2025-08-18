@@ -4,11 +4,9 @@ local cmp_nvim_lsp = require "cmp_nvim_lsp"
 local SERVERS = {
     "bashls",
     "cssls",
-    "eslint",
     "html",
     "jsonls",
     "ts_ls",
-    "marksman",
     "pyright",
     "stylelint_lsp",
     "lua_ls",
