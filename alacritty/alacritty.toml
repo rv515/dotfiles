@@ -1,0 +1,13 @@
+[window]
+opacity = 0.8
+blur = true
+
+[font]
+normal = { family = "JetBrains Mono NerdFont", style = "Regular" }
+bold = { family = "JetBrains Mono NerdFont", style = "Bold" }
+italic = { family = "JetBrains Mono NerdFont", style = "Italic" }
+bold_italic = { family = "JetBrains Mono NerdFont", style = "Bold Italic" }
+size = 10.0
+
+[terminal]
+shell = { program = "/bin/zsh", args = ["-l"] }
