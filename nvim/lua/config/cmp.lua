@@ -63,6 +63,10 @@ cmp.setup {
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
             col_offset = -3,
             side_padding = 0,
+            border = "rounded",
+        },
+        documentation = {
+            border = "rounded",
         },
     },
     formatting = {
@@ -80,7 +84,7 @@ cmp.setup {
         end,
     },
     experimental = {
-      ghost_text = true,
+        ghost_text = true,
     },
 }
 
