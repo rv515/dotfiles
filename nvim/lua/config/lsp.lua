@@ -7,7 +7,6 @@ local SERVERS = {
     "jsonls",
     "ts_ls",
     "pyright",
-    "stylelint_lsp",
     "lua_ls",
 }
 
