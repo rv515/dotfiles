@@ -60,21 +60,20 @@ cmp.setup {
     }),
     window = {
         completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
-
+        documentation = cmp.config.window.bordered(),
     },
     formatting = {
-        format = lspkind.cmp_format({
-                mode = "symbol_text",
-                maxwidth = 50,
-                menu = ({
-                  buffer = "[Buffer]",
-                  nvim_lsp = "[LSP]",
-                  vsnip = "[Vsnip]",
-                  nvim_lua = "[Lua]",
-                  latex_symbols = "[Latex]",
-                })
-            })
+        format = lspkind.cmp_format {
+            mode = "symbol_text",
+            maxwidth = 50,
+            menu = {
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                vsnip = "[Vsnip]",
+                nvim_lua = "[Lua]",
+                latex_symbols = "[Latex]",
+            },
+        },
     },
 }
 

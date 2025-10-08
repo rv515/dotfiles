@@ -1,21 +1,46 @@
-local lspconfig = require "lspconfig"
-local cmp_nvim_lsp = require "cmp_nvim_lsp"
-
-local SERVERS = {
+vim.lsp.enable({
     "cssls",
     "html",
     "jsonls",
     "ts_ls",
     "pyright",
     "lua_ls",
+})
+
+vim.diagnostic.config {
+    virtual_text = false,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = true,
+    float = {
+		focusable = true,
+		style = "minimal",
+		border = "rounded",
+		source = true, -- Show source in diagnostic popup window
+		header = "",
+		prefix = "",
+    },
 }
 
-for _, server in pairs(SERVERS) do
-    local opts = { capabilities = cmp_nvim_lsp.default_capabilities() }
-    local require_ok, settings =
-        pcall(require, "config.lsp-settings." .. server)
-    if require_ok then
-        opts = vim.tbl_deep_extend("force", settings, opts)
-    end
-    lspconfig[server].setup(opts)
-end
+-- Enable inlay hints
+vim.lsp.inlay_hint.enable(true)
+
+-- Create default capabilities without cmp
+local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+
+vim.lsp.config("*", {
+	capabilities = lsp_capabilities,
+})
+
+local keymap = vim.keymap
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+	callback = function(ev)
+		-- Buffer local mappings.
+		-- See `:help vim.lsp.*` for documentation on any of the below functions
+		local opts = { buffer = ev.buf, silent = true }
+
+		opts.desc = "Show line diagnostics"
+		keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+	end,
+})
