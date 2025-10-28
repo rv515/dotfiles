@@ -104,3 +104,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias upg="pkg upgrade -y"
 alias nv="nvim"
+
+source /data/data/com.termux/files/home/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
