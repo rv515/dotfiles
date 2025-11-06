@@ -5,6 +5,7 @@ vim.lsp.enable({
     "ts_ls",
     "pyright",
     "lua_ls",
+    "svelte"
 })
 
 vim.diagnostic.config {
