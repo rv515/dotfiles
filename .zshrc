@@ -3,8 +3,8 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export DOWNLOADS="$HOME/storage/downloads/"
-export DOCUMENTS="$HOME/storage/documents/"
+export DW="$HOME/storage/downloads/"
+export DC="$HOME/storage/documents/"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias upg="pkg upgrade -y"
 alias nv="nvim"
+alias ve="source .venv/bin/activate"
