@@ -59,8 +59,8 @@ cmp.setup {
         { name = "buffer" },
     }),
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered "rounded",
+        documentation = cmp.config.window.bordered "rounded",
     },
     formatting = {
         format = lspkind.cmp_format {

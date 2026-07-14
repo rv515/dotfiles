@@ -1,2 +1,3 @@
 -- vim.cmd.colorscheme "gruvbox"
-vim.cmd "colorscheme kanagawa"
+-- vim.cmd "colorscheme monochrome"
+vim.cmd.colorscheme "github-monochrome-zenbones"
