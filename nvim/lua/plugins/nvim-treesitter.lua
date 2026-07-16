@@ -1,32 +1,15 @@
-return {
-    "nvim-treesitter/nvim-treesitter",
-    lazy = false,
-    build = ":TSUpdate",
-    config = function()
-        local languages = {
-            "bash",
-            "css",
-            "html",
-            "javascript",
-            "json",
-            "lua",
-            "markdown",
-            "markdown_inline",
-            "python",
-            "svelte",
-            "tsx",
-            "typescript",
-        }
+require("nvim-treesitter.config").setup()
 
-        require("nvim-treesitter").install(languages)
+-- Ensure parsers are installed (idempotent - skips if already present)
+-- require("nvim-treesitter").install({})
 
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = languages,
-            callback = function()
-                vim.treesitter.start()
-            end,
-        })
-
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+-- In Neovim 0.12, treesitter highlight is managed natively
+-- Enable it for all buffers with an available parser
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(ev)
+        local ok = pcall(vim.treesitter.start, ev.buf)
+        if not ok then
+            return
+        end
     end,
-}
+})

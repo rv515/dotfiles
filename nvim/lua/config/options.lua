@@ -1,20 +1,21 @@
--- Global Options
-vim.o.mouse = "a"
-vim.o.encoding = "UTF-8"
-vim.o.swapfile = false
-vim.o.wrap = false
-vim.o.scrolloff = 4
-vim.o.sidescrolloff = 4
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.smarttab = true
-vim.o.expandtab = true
-vim.o.smartindent = true
-vim.o.fileformat = "unix"
-vim.o.showmode = false
+local opt = vim.opt
 
--- Local Options
-vim.wo.number = true
-vim.wo.cursorline = true
+opt.mouse = "a"
+opt.encoding = "UTF-8"
+opt.swapfile = false
+opt.wrap = false
+opt.scrolloff = 4
+opt.sidescrolloff = 4
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.smarttab = true
+opt.expandtab = true
+opt.smartindent = true
+opt.fileformat = "unix"
+opt.showmode = false
+opt.termguicolors = true
+opt.winborder = "rounded"
+opt.number = true
+opt.cursorline = true
 
 vim.cmd "filetype indent on"

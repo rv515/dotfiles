@@ -1,3 +1,2 @@
--- vim.cmd.colorscheme "gruvbox"
--- vim.cmd "colorscheme monochrome"
-vim.cmd.colorscheme "github-monochrome-zenbones"
+require "lush" -- For Jellybeans colorscheme
+vim.cmd.colorscheme "jellybeans-nvim"
