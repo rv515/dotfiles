@@ -62,25 +62,21 @@ vim.api.nvim_create_user_command("PackClean", function()
         return
     end
 
-    vim.ui.select(
-        { "Yes", "No" },
-        {
-            prompt = "Remove "
-                .. #orphans
-                .. " unused plugin(s): "
-                .. table.concat(orphans, ", ")
-                .. "?",
-        },
-        function(choice)
-            if choice == "Yes" then
-                vim.pack.del(orphans)
-                vim.notify(
-                    "Removed " .. #orphans .. " plugin(s)",
-                    vim.log.levels.INFO
-                )
-            end
+    vim.ui.select({ "Yes", "No" }, {
+        prompt = "Remove "
+            .. #orphans
+            .. " unused plugin(s): "
+            .. table.concat(orphans, ", ")
+            .. "?",
+    }, function(choice)
+        if choice == "Yes" then
+            vim.pack.del(orphans)
+            vim.notify(
+                "Removed " .. #orphans .. " plugin(s)",
+                vim.log.levels.INFO
+            )
         end
-    )
+    end)
 end, { desc = "Remove unused vim.pack plugins" })
 
 -- Auto-load all plugin configurations from lua/plugins/
