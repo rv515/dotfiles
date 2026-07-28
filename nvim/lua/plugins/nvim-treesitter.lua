@@ -1,7 +1,10 @@
 require("nvim-treesitter.config").setup()
 
 -- Ensure parsers are installed (idempotent - skips if already present)
--- require("nvim-treesitter").install({})
+require("nvim-treesitter").install {
+    "svelte",
+    "typescript",
+}
 
 -- In Neovim 0.12, treesitter highlight is managed natively
 -- Enable it for all buffers with an available parser

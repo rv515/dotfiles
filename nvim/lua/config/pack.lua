@@ -36,10 +36,6 @@ vim.pack.add {
     gh "MunifTanjim/nui.nvim",
 
     gh "neovim/nvim-lspconfig",
-
-    -- Colorscheme
-    gh "metalelf0/jellybeans-nvim",
-    gh "rktjmp/lush.nvim",
 }
 
 -- :PackUpdate — update all plugins without confirmation
